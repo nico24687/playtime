@@ -1,5 +1,6 @@
 class ErrorsController < ApplicationController
   before_action :skip_authorization
+  layout "error"
   
   def not_found
   	render(:status => 404)
