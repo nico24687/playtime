@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: wishlist_items
@@ -15,15 +17,17 @@
 class WishlistItem < ApplicationRecord
   belongs_to :wishlist
   belongs_to :item
-  has_many :pledges
+  has_many :pledges, dependent: :destroy
 
   delegate :amazon_url, :price_cents, :asin, :name,
            :image_url, :image_width, :image_height,
            to: :item
 
-  enum priority: [:low, :medium, :high]
+  enum priority: %i[low medium high]
 
   validates :priority, presence: true
   validates :quantity, presence: true,
                        numericality: { greater_than_or_equal_to: 0 }
+
+  scope :priority_order, -> { order(priority: :desc) }
 end

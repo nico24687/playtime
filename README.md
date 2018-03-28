@@ -1,6 +1,7 @@
 [![Playtime Project Logo](doc/logo.png)][HCPP]
 
 # Homeless Children's Playtime Project
+[![Build Status](https://api.travis-ci.org/rubyforgood/playtime.svg?branch=master)](https://travis-ci.org/rubyforgood/playtime)
 
 *The mission of the [Homeless Children's Playtime Project][HCPP] is to nurture
 healthy child development and reduce the effects of trauma among children
@@ -21,7 +22,7 @@ throughout DC. This application will allow donors to view the organization's
 Amazon wish lists, add items, track contributions, and aid staff in following
 up with donors.
 
-*We don't have a live site yet. Stay tuned!*
+![Playtime Project App](doc/playtime_app.png)
 
 ### About Ruby for Good
 
@@ -74,7 +75,7 @@ You need:
   - Ruby 2.4.1
   - Rails 5.1
   - Postgres >=9.1
-  - A javascript runtime, we recommend node.js
+  - A JavaScript runtime, we recommend Node.js
 
 You will need Node.js (which comes bundled with NPM) and it is easiest to
 install on Mac, Windows, or Linux [with your favorite package manager][node-pkg]
@@ -83,11 +84,11 @@ or by downloading directly from [nodejs.org][node-direct].
 [node-pkg]:    https://nodejs.org/en/download/package-manager/
 [node-direct]: https://nodejs.org/en/download/
 
-You will also need git, ruby, rails, and PostgreSQL.  If you have git and
-postgres in some version or another you're probably set. But:
+You will also need Git, Ruby, Rails, and PostgreSQL. If you have Git and
+Postgres in some version or another you're probably set. But:
 
   - If you're working on **a fresh Windows machine**, you're best off installing
-    ruby and rails with the [Rails Installer]. For PostgreSQL, you'll want to
+    Ruby and Rails with the [Rails Installer]. For PostgreSQL, you'll want to
     install [EnterpriseDB].
 
   - If you have **a fresh Mac OS X machine**, just follow these
@@ -95,7 +96,7 @@ postgres in some version or another you're probably set. But:
     the correct version). These instructions include PostgreSQL.
 
   - If you are using **Ubuntu Linux**, use this [Rails Apps Guide] to get set
-    up with ruby, rails, and node.js and this guide to
+    up with Ruby, Rails, and Node.js and this guide to
     [install PostgreSQL][Postgres Ubuntu].
 
   - Otherwise, Google for instructions for your OS of choice. Let us know if
@@ -165,7 +166,7 @@ account or login locally:
 
    You can also change your user role by using `rails console`.
 
-5. Start your rails app with `rails server`. You're ready to OAuth!
+5. Start your Rails app with `rails server`. You're ready to OAuth!
 
 [Amazon OAuth Instructions]: https://github.com/wingrunr21/omniauth-amazon#prereqs
 
@@ -221,7 +222,7 @@ checks can be run with
 Specs can be found in the `spec` folder, and they follow the typical `rspec`
 directory structure. Some notes:
 
-  - We're using FactoryGirl to generate objects, and those files can be found
+  - We're using FactoryBot to generate objects, and those files can be found
     in `spec/factories/<plural_model_name>.rb`.
 
   - Support files, including helper methods, gem initialization/configuration,

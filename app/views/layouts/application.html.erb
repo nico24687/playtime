@@ -6,7 +6,7 @@
     <%= favicon_link_tag 'favicon.png' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag 'http://www.playtimeproject.org/wp-content/uploads/2013/03/Logo-no-words-e1363625449703.png'%>
+    <%= favicon_link_tag 'https://www.playtimeproject.org/wp-content/uploads/2013/03/Logo-no-words-e1363625449703.png'%>
   </head>
 
   <body>
@@ -22,6 +22,8 @@
     <div class="current-view">
       <%= yield %>
     </div>
-
+    <div class="footer">
+            The Playtime Wishlist was built with <i class="fa fa-heart"></i> by <a href="http://rubyforgood.org">Ruby for Good</a>
+    </div>
   </body>
 </html>

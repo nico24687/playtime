@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AmazonProductAPI
   # Represents an individual Amazon item listing
   class SearchItem
@@ -15,23 +17,28 @@ module AmazonProductAPI
                             attrs[:image_height])
     end
 
-    def image_url
-      image.url
+    def update_hash
+      {
+        name: title,
+        price_cents: price_cents,
+        amazon_url: detail_page_url,
+        image_url: image_url,
+        image_height: image_height,
+        image_width: image_width
+      }
     end
 
-    def image_width
-      image.width
-    end
+    delegate :url, to: :image, prefix: true
 
-    def image_height
-      image.height
-    end
+    delegate :width, to: :image, prefix: true
+
+    delegate :height, to: :image, prefix: true
 
     def valid?
-      price != "$0.00"
+      price != '$0.00'
     end
 
-    def has_valid_image?
+    def valid_image?
       image.valid?
     end
 

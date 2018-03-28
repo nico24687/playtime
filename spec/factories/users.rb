@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -12,7 +14,7 @@
 #  zipcode        :string
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     sequence :email { |n| "user#{n}@example.com" }
 

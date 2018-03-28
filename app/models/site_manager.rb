@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: site_managers
@@ -9,7 +11,7 @@
 #  updated_at  :datetime         not null
 #
 
-class SiteManager < ActiveRecord::Base
+class SiteManager < ApplicationRecord
   belongs_to :user
   belongs_to :wishlist
 end

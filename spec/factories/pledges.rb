@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: pledges
@@ -10,7 +12,7 @@
 #  quantity         :integer          default(1), not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :pledge do
     wishlist_item
 

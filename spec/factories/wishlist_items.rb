@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: wishlist_items
@@ -12,7 +14,7 @@
 #  priority      :integer          default("low"), not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :wishlist_item do
     wishlist
     item

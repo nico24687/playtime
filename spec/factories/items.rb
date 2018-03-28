@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: items
@@ -15,9 +17,9 @@
 #  name          :text             not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :item do
-    name "Louis the Corgi"
+    name 'Louis the Corgi'
 
     trait :on_a_wishlist do
       transient do

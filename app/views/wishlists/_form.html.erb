@@ -1,15 +1,5 @@
 <%= form_with(model: wishlist, local: true) do |form| %>
-  <% if wishlist.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(wishlist.errors.count, "error") %> prohibited this wishlist from being saved:</h2>
-
-      <ul>
-      <% wishlist.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'shared/error_messages', locals: { submission: wishlist }%>
 
   <div class="form-group">
     <%= form.label 'Wishlist Name', class: "group-label" %></br>
@@ -17,25 +7,27 @@
   </div>
 
   <%= form.fields_for :user do |user_form| %>
-    <div class="form-group" id="wishlist_users">
-
-      <p>
-        <strong>Admins:</strong> (can manage all wishlists)
+    <div class="form-group" id="wishlist-admins">
+      <strong>Admins:</strong> (can manage all wishlists)
+      <div>
         <% User.admin.each do |admin| %>
           <input type="checkbox" checked disabled readonly />
           <%= admin.display_name %>
         <% end %>
-      </p>
+      </div>
+    </div>
 
-      <p>
-        <strong>Site Managers:</strong><br />
-          <%= form.collection_check_boxes :user_ids, User.all, :id, :display_name do |b|
+    <div class="form-group" id="wishlist-site-managers">
+      <strong>Site Managers:</strong>
+      <div>
+        <%=
+          form.collection_check_boxes :user_ids, User.all, :id, :display_name do |b|
             b.label(class: "checkbox-inline") {
               b.check_box(id: "user-#{b.object.id}") + b.text
             }
           end
-          %>
-        <br />
+        %>
+      </div>
       </p>
     </div>
   <% end %>
